@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Atlas SfN Dakar–Niayes · GEF 12082</title>
+<meta name="description" content="Atlas des 15 sites SfN Dakar & Niayes — coordonnées vérifiées, fiches, SfN, hors SfN, projections.">
+<meta name="theme-color" content="#1b2453">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Atlas SfN">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="app/icon-192.png">
+<link rel="apple-touch-icon" href="app/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<link rel="stylesheet" href="atlas.css">
+<link rel="stylesheet" href="app/mobile.css">
+</head>
+<body>
+<div id="app">
+  <aside id="sheet">
+    <div class="grip" id="grip" aria-label="Agrandir / réduire le panneau"><i></i></div>
+    <div class="brand">
+      <div class="k">GEF 12082 · PIMS 10290 · FEM-8 LDCF</div>
+      <h1>Atlas des sites SfN — Dakar &amp; Niayes</h1>
+      <div class="appbar">
+        <button class="abtn" id="bInstall" hidden>⤓ Installer l'application</button>
+        <button class="abtn ghost" id="bOffline" title="Précharger le fond de carte des 15 sites pour un usage sans réseau">Hors ligne</button>
+        <span class="netst" id="netst"></span>
+      </div>
+    </div>
+    <div class="tabs" id="tabs">
+      <button data-t="sites" class="on">Sites (15)</button>
+      <button data-t="sfn">SfN</button>
+      <button data-t="hors">Hors SfN</button>
+      <button data-t="niayes">Niayes · eau</button>
+      <button data-t="proj">Projections</button>
+      <button data-t="meth">Méthode</button>
+    </div>
+
+    <div class="pane on" id="p-sites">
+      <div id="sitelist"></div>
+      <div id="fiche" class="fiche" style="display:none"></div>
+    </div>
+
+    <div class="pane" id="p-sfn"></div>
+    <div class="pane" id="p-hors"></div>
+    <div class="pane" id="p-niayes"></div>
+    <div class="pane" id="p-proj"></div>
+    <div class="pane" id="p-meth"></div>
+  </aside>
+
+  <div id="mapwrap">
+    <div id="map"></div>
+    <div class="scalebar" id="scalebar"></div>
+    <div class="yearbadge" id="yearbadge"></div>
+    <div class="basemap" id="basemap">
+      <button data-b="sat" class="on">Satellite</button>
+      <button data-b="osm">Plan OSM</button>
+      <button data-b="topo">Topo</button>
+    </div>
+    <button class="locbtn" id="bLocate" title="Ma position (GPS)">◎</button>
+    <div class="scaleread" id="scaleread"></div>
+    <div class="cursor" id="cursor">—</div>
+  </div>
+</div>
+<div id="print"></div>
+
+<div class="toast" id="toast"></div>
+<div class="iosdlg" id="iosdlg">
+  <div class="iosbox">
+    <b>Installer l'atlas</b>
+    <p id="iostxt"></p>
+    <button class="btn fill" onclick="document.getElementById('iosdlg').classList.remove('on')">Compris</button>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="atlas-data.js"></script>
+<script src="atlas-verif.js"></script>
+<script src="atlas-vuln.js"></script>
+<script src="atlas-map.js"></script>
+<script src="atlas-sfn.js"></script>
+<script src="atlas-sfn-map.js"></script>
+<script src="atlas-hors.js"></script>
+<script src="atlas-panels.js"></script>
+<script src="atlas-pdf.js"></script>
+<script src="atlas-3d-hors.js"></script>
+<script src="atlas-3d.js"></script>
+<script src="app/app.js"></script>
+</body>
+</html>

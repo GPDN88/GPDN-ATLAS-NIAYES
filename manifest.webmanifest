@@ -1,0 +1,25 @@
+{
+  "name": "Atlas SfN Dakar–Niayes · GEF 12082",
+  "short_name": "Atlas SfN",
+  "description": "Atlas des 15 sites SfN (bassins de rétention et exutoires) — coordonnées vérifiées, fiches, couches SfN et hors SfN, projections.",
+  "lang": "fr",
+  "id": "./index.html",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone"],
+  "orientation": "any",
+  "background_color": "#f6f3ec",
+  "theme_color": "#1b2453",
+  "categories": ["navigation", "productivity", "utilities"],
+  "icons": [
+    { "src": "app/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "app/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "app/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Sites (15)", "url": "./index.html?tab=sites", "icons": [{ "src": "app/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Solutions SfN", "url": "./index.html?tab=sfn", "icons": [{ "src": "app/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Projections", "url": "./index.html?tab=proj", "icons": [{ "src": "app/icon-192.png", "sizes": "192x192" }] }
+  ]
+}
